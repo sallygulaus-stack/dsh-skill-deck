@@ -1,0 +1,12 @@
+# dsh-skill-deck bundle patch: 把插件行插进宿主组合。
+#
+# 该插件是 HOST-PLANE：
+#   - 宿主半区在 ctx.skills 上注册一个文件系统技能 provider（顶替被禁用的
+#     @deepseek-ai/dsh-skill-filesystem 与 @weibaohui/skills-management 的位置，
+#     保证模型侧技能目录不丢），并用 ctx.webServer 挂 /api/dsh-skill-deck 路由族。
+#   - 客户端半区注册「技能牌组」侧边栏面板 + 中栏页面 + 输入栏「技能」按钮。
+#
+# 必须写成 `- insert:` 包一个列表；裸 `- id:` 条目在没有同 id 上游行时会被静默跳过。
+- insert:
+    - id: skill-deck
+      name: 'dsh-skill-deck'

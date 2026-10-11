@@ -1,0 +1,12 @@
+# 依赖
+node_modules/
+
+# 本机备份 / 临时产物（不属于项目本体）
+backup-profile-*/
+backup-*/
+*.log
+*.tmp
+
+# 系统文件
+.DS_Store
+Thumbs.db

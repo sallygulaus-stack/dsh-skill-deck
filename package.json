@@ -1,0 +1,53 @@
+{
+  "name": "dsh-skill-deck",
+  "version": "0.1.0",
+  "description": "DSH 技能牌组：在一个面板里浏览、导入、创建、启停与回收本机技能；每个技能可加只保存在本机的中文别名 / 备注 / 分类 / 标签（不写入 SKILL.md，模型读不到）；输入栏提供技能快捷插入浮层。",
+  "license": "MIT",
+  "author": "sallygulaus-stack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallygulaus-stack/dsh-skill-deck.git"
+  },
+  "homepage": "https://github.com/sallygulaus-stack/dsh-skill-deck#readme",
+  "bugs": {
+    "url": "https://github.com/sallygulaus-stack/dsh-skill-deck/issues"
+  },
+  "type": "commonjs",
+  "main": "src/index.js",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "skills",
+    "skill-manager",
+    "dsh-plugin"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./client/bundle.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=22.5",
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "files": [
+    "src",
+    "client",
+    "client-src",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY.md"
+  ]
+}
