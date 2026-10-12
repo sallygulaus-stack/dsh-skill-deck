@@ -127,18 +127,25 @@ provider 只输出技能的**真实**字段；本地别名/描述/分类完全�
 
 ## 安装
 
-```powershell
-# 把插件目录放到任意位置，然后把它装进目标 profile：
-dsh plugin --profile desktop add link:<插件目录的绝对路径>
+**推荐：从 npm 装**（已发布，包名 `dsh-skill-deck`）
 
-# 例如：
-dsh plugin --profile desktop add link:D:\plugins\dsh-skill-deck
+打开 DSH **设置 → 插件 → 安装**，在输入框里填包名：
+
+```
+dsh-skill-deck
 ```
 
-也可以先用插件管理器 UI（设置 → 插件）从本地目录安装。
+同一个输入框也接受另外两种来源：
 
-`package.json` 已按**可发布/可分发**形态写好：无 `private`、带 `keywords` / `files` / `LICENSE`，
-也可以直接发布到 npm 后 `dsh plugin --profile desktop add dsh-skill-deck`。
+| 填什么 | 什么时候用 | 代价 |
+| --- | --- | --- |
+| `dsh-skill-deck` | 正常安装（**推荐**） | 无；插件管理器的「检查更新」认得它 |
+| `git+https://github.com/sallygulaus-stack/dsh-skill-deck.git` | 想装仓库当前状态 | 慢；**不参与更新检查** |
+| `…\dsh-skill-deck-0.1.0.tgz` | 离线 / 内网机器 | 升级要手动重装 |
+
+> ⚠️ **必须走 GUI 里的插件管理器。** 命令行 `dsh plugin --profile desktop add …` 对
+> `desktop` profile **会被拒绝**——桌面端的 profile 由**正在运行的 DSH 进程**持有，
+> CLI 写不进去。（`link:` 本地目录那条路只在自用调试时有意义，同样走 GUI 填目录路径。）
 
 > **首次安装或升级后请「完全退出 DSH（含托盘）再启动」**，原因见下：
 
