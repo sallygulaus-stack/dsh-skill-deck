@@ -172,6 +172,29 @@ node scripts/smoke-client.js      # 客户端 bundle 装载 + 组件渲染覆盖
 | `30-picker.js` | 输入栏「技能」按钮 + 快捷插入浮层 + `slash/input-insert-text` 插入 |
 | `99-tail.js` | `apply`/`inject` 导出与槽位注册 |
 
+## 发布（CI 自动，不需要令牌）
+
+发布由 **GitHub Actions + npm Trusted Publishing** 完成：GitHub 用仓库身份（OIDC）向 npm 换取
+**一次性**发布凭证，所以**本地不需要任何 npm 令牌，也不需要 2FA**。两处配置：
+
+| 在哪 | 内容 |
+| --- | --- |
+| 仓库 | `.github/workflows/publish.yml`（推 tag 触发，先跑三套冒烟测试再发） |
+| npm 网站 | 包页面 → **Settings → Trusted publishing** 绑定 `sallygulaus-stack/dsh-skill-deck` + `publish.yml` |
+
+发一版：
+
+```powershell
+npm version patch -m "chore: release v%s"   # 升版本 + 本地打 tag
+git push --follow-tags                      # 分支和 tag 一起推
+```
+
+Actions 依次做：跑三套冒烟测试 → 校验 tag 与 `package.json` 版本一致 → `npm publish --provenance`
+（带 Sigstore 来源签名）。
+
+> **npm 有 2~4 分钟的后台处理**：推完注册表不会立刻出现新版本，这期间别人 `npm install` 装到的还是旧版。
+> 确认是否上线用 `npm view dsh-skill-deck version`。
+
 ## 配置
 
 profile 的 `cordis.patch.yml` 里可以写：

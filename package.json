@@ -1,6 +1,6 @@
 {
   "name": "dsh-skill-deck",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DSH 技能牌组：在一个面板里浏览、导入、创建、启停与回收本机技能；每个技能可加只保存在本机的中文别名 / 备注 / 分类 / 标签（不写入 SKILL.md，模型读不到）；输入栏提供技能快捷插入浮层。",
   "license": "MIT",
   "author": "sallygulaus-stack",
