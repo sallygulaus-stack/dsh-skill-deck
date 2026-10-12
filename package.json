@@ -48,6 +48,7 @@
     "cordis.patch.yml",
     "README.md",
     "LICENSE",
+    "NOTICE",
     "THIRD_PARTY.md"
   ]
 }

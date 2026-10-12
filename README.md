@@ -3,8 +3,9 @@
 > DSH 技能牌组：本机技能统一管理 + **纯本地中文别名/描述/分类/标签** + 输入栏「技能」快捷插入 + `.md` 一键导入。
 
 它为三个具体痛点而做，功能上与 `@linxin666/dsh-client-ui-skill-explorer`（旧「技能中心」面板）和
-`@weibaohui/skills-management`（输入栏快捷发送）有重叠——开发时参考过这两个插件的做法，
-代码为独立实现，来源与许可见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+`@weibaohui/skills-management`（输入栏快捷发送）有重叠——开发时参考过这两个插件的做法：
+对前者是纯设计参考（无代码派生），对后者有**少量代码派生**（浮层组件与技能目录扫描辅助），
+已按 MIT 要求在 [NOTICE](NOTICE) 里随附版权声明与许可全文。来源边界见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
 ---
 

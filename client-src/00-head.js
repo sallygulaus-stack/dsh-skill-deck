@@ -1,4 +1,7 @@
-/* dsh-skill-deck — 客户端半区（构建产物由 scripts/build-client.mjs 拼接生成，勿直接改 client/bundle.js） */
+/* dsh-skill-deck — 客户端半区（构建产物由 scripts/build-client.mjs 拼接生成，勿直接改 client/bundle.js）
+ *
+ * 本构建产物包含派生自 @weibaohui/skills-management（MIT，Copyright (c) weibaohui）的代码；
+ * 该项目的版权声明与许可全文见本仓库根目录的 NOTICE 文件。 */
 window.__ModuleLoader__.load({
   id: 'dsh-skill-deck',
   factory: (require) => {

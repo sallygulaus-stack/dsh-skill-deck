@@ -1,0 +1,49 @@
+dsh-skill-deck — 第三方代码来源声明（NOTICE）
+==============================================
+
+本软件包含派生自下列第三方项目的代码。按该项目的 MIT 许可要求，其版权声明
+与许可全文在此保留，并随本软件的副本/实质部分一并分发（含 npm 包与
+client/bundle.js 构建产物）。
+
+项目：@weibaohui/skills-management
+版权：Copyright (c) weibaohui <weibaohui@yeah.net>
+许可：MIT（依该项目 package.json 的 SPDX 字段 "license": "MIT"，npm registry 元数据一致；
+      其仓库内没有 LICENSE 文件，故以上为 SPDX 声明）
+来源：https://github.com/weibaohui/skills-management
+
+派生范围（逐文件，2026-10-12 用「最长连续相同词串 + 参考特有 n-gram」比对核定）：
+
+  client-src/30-picker.js   SkillPicker 组件（输入栏「技能」候选浮层）：
+                            组件结构、effect 组织、键盘处理与定位算法派生自上游同名组件
+  client-src/20-panel.js    ConfirmDialog 中 Esc 关闭的监听写法
+  src/index.js              scanSkillDirs / scanRoot / readSkillEntry 一带的
+                            技能目录扫描辅助
+
+本仓库其余代码为本项目独立编写。
+
+另一处设计参考 @linxin666/dsh-client-ui-skill-explorer（BSD-3-Clause）经同一比对
+确认**不含任何代码派生**（最长连续相同词串 12 词，且为通用 for 循环写法），
+仅为功能与交互层面的参考，故不产生 BSD-3 的署名义务；仍列为致谢，见 THIRD_PARTY.md。
+
+--------------------------------------------------------------------------------
+MIT License
+
+Copyright (c) weibaohui <weibaohui@yeah.net>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
